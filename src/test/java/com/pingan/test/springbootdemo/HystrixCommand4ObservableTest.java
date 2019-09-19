@@ -24,7 +24,7 @@ import com.pingan.test.springbootdemo.hystrix.HelloWorldHystrixCommand;
  */
 public class HystrixCommand4ObservableTest {
 	
-//	@Test
+	@Test
 	public void testObservable() throws Exception {
 
 		// observe()是异步非堵塞性执行，同queue
@@ -73,14 +73,14 @@ public class HystrixCommand4ObservableTest {
 
 	}
 	
-//	@Test
+	@Test
 	public void testToObservable() throws Exception {
 
 		// toObservable()是异步非堵塞性执行，同queue
 		Observable<String> coldObservable = new HelloWorldHystrixCommand("Hlx").toObservable();
 
 		// single()是堵塞的
-//		System.out.println("coldObservable single结果：" + coldObservable.toBlocking().single());
+		System.out.println("coldObservable single结果：" + coldObservable.toBlocking().single());
 		
 		// 注册观察者事件
 		// subscribe()是非堵塞的
